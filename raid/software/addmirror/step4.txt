@@ -1,0 +1,18 @@
+rem - go into diskpart and verify that the system partition is partition 1 for both the orginal and mirror drive
+rem - select disk 0
+rem - list part
+rem - select disk 1
+rem - list part
+
+select disk 1
+list part
+select part 1
+assign letter=S
+format quick fs=fat32 label "System"
+select disk 0
+list part
+select part 1
+assign letter=P
+
+
+

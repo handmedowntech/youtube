@@ -1,0 +1,9 @@
+select disk 0
+convert dynamic
+select disk 1
+convert dynamic
+select vol w
+delete vol
+select disk 0
+select volume c
+add disk 1
