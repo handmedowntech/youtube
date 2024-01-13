@@ -1,0 +1,2 @@
+rem insures the recovery partition is populated with the same as what is on drive 0
+robocopy.exe r:\ z:\ * /e /copyall /dcopy:t /xd "System Volume Information"
