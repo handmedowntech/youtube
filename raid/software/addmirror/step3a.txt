@@ -1,1 +1,0 @@
-rem wait for mirror to complete - check Disk Management by running diskmgmt.msc from the command line or Right Click on the Windows icon and choose Disk Management

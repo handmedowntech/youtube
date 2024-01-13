@@ -1,2 +1,0 @@
-rem - Open up Disk Management (Right Click on Start and pick Disk Management)
-rem - 
