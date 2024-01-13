@@ -1,8 +1,0 @@
-rem - Open up Disk Management (Right Click on Start and pick Disk Management)
-rem - Find the partition on Disk 1 that will be the mirror partition (most likely will say "RAW")
-rem - Right Click on it and pick Delete Volume and confirm
-rem - Now find the C drive partition on Disk 0
-rem - Right Click and pick Add Mirror
-rem - Pick "Disk 1" and click Add Mirror
-rem - At this point the two partitions should be showing "Resynching" and after a while will show a percentage
-rem - Wait until the mirroring completes before moving to the next step
