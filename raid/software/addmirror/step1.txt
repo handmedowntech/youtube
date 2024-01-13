@@ -2,7 +2,7 @@ rem - need to run diskpart as admin
 rem - first run it without the script and do
 rem - select disk 0
 rem - list part
-rem - make a note of the size of the recovery partition (522 MB for example)
+rem - make a note of the size of the recovery partition (522 MB for example or some Windows 11 are as large as 705)
 rem - find the two places with changeme and set it to the size (don't add the MB) ex: shrink minimum 522
 rem - exit and run the script using:  diskpart /s step1.txt
 
@@ -18,16 +18,15 @@ create partition efi size=100
 create partition msr size=16
 create partition primary
 shrink minimum changeme
-format quick fs=ntfs label="Windows"
-assign letter="W"
 create partition primary size=changeme
 format quick fs=ntfs label="Recovery"
 set id="de94bba4-06d1-4d40-a16a-bfd50179d6ac"
 gpt attributes=0x8000000000000001
-assign letter="Z"
-list part
 select disk 0
-select part 4
-assign letter="R"
+convert dyna
+select disk 1
+convert dyna
+
+
 
 

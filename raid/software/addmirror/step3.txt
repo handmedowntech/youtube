@@ -1,9 +1,26 @@
+rem - go into diskpart and list out the partition types and numbers
+rem - select disk 0
+rem - list part
+rem - select disk 1
+rem - list part
+rem - Change the "disk0" and "disk1" values below as appropriate - for example if the disk 0 system partition is 1 then 
+rem - change disk0systempartition to 1
+
+
 select disk 0
-convert dynamic
+select part disk0systempartition
+assign letter="P"
+select part disk0recoverypartition
+assign letter="R"
+
 select disk 1
-convert dynamic
-select vol w
-delete vol
-select disk 0
-select volume c
-add disk 1
+select part disk1systempartition
+assign letter="S"
+format quick fs=fat32 label "System"
+select part disk1recoverypartition
+assign letter="Z"
+
+
+
+
+
